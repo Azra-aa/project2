@@ -26,23 +26,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
-Route::middleware('auth')->group(function () {
-    // Admin
+Route::middleware(['auth', 'admin'])->group(function () {
+    // admin
     Route::get('/admin', [AdminController::class, 'index']);
-    
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
-    // FaskesRole
-    Route::get('/faskes', [RolefaskesController::class, 'index'])->name('rolefaskes.index');
-    Route::get('/faskes/create', [RolefaskesController::class, 'create'])->name('rolefaskes.create');
-    Route::post('/faskes', [RolefaskesController::class, 'store'])->name('rolefaskes.store');
-    Route::get('/faskes/{id}', [RolefaskesController::class, 'show'])->name('rolefaskes.show');
-    Route::get('/faskes/{id}/edit', [RolefaskesController::class, 'edit'])->name('rolefaskes.edit');
-    Route::put('/faskes/{id}', [RolefaskesController::class, 'update'])->name('rolefaskes.update');
-    Route::delete('/faskes/{id}', [RolefaskesController::class, 'destroy'])->name('rolefaskes.destroy');
-    
     // admin/provinsi
     Route::resource('admin/provinsi', ProvinsiController::class);
     Route::get('admin/provinsi', [ProvinsiController::class, 'provinsi'])->name('admin.provinsi.index');
@@ -73,4 +60,21 @@ Route::middleware('auth')->group(function () {
     Route::put('admin/faskes/{id}', [FaskesController::class, 'update'])->name('admin.faskes.update');
     Route::delete('admin/faskes/{id}', [FaskesController::class, 'destroy'])->name('admin.faskes.destroy');
 });
-    require __DIR__.'/auth.php';
+
+Route::middleware('auth')->group(function () {
+    
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
+
+    // FaskesRole
+    Route::get('/faskes', [RolefaskesController::class, 'index'])->name('rolefaskes.index');
+    Route::get('/faskes/create', [RolefaskesController::class, 'create'])->name('rolefaskes.create');
+    Route::post('/faskes', [RolefaskesController::class, 'store'])->name('rolefaskes.store');
+    Route::get('/faskes/{id}', [RolefaskesController::class, 'show'])->name('rolefaskes.show');
+    Route::get('/faskes/{id}/edit', [RolefaskesController::class, 'edit'])->name('rolefaskes.edit');
+    Route::put('/faskes/{id}', [RolefaskesController::class, 'update'])->name('rolefaskes.update');
+    Route::delete('/faskes/{id}', [RolefaskesController::class, 'destroy'])->name('rolefaskes.destroy');
+});
+
+require __DIR__.'/auth.php';
