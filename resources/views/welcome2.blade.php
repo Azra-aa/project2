@@ -51,11 +51,10 @@
         <nav id="navmenu" class="navmenu">
           <ul>
             <li><a href="#hero" class="active">Home<br></a></li>
-            <li class="dropdown"><a href="#faskes-table"><span>Faskes</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+            <li class="dropdown"><span>{{ Auth::user()->name }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
               <ul>
-                <li><a href="#">Faskes Tingkat 1</a></li>
-                <li><a href="#">Faskes Tingkat 2</a></li>
-                <li><a href="#">Faskes Tingkat 3</a></li>
+                <li><a href="{{ profile.edit }}">Profile</a></li>
+                <li><a href="{{ logout }}">Logout</a></li>
               </ul>
             </li>
             <li><a href"/login" class="active">Login<br></a></li>

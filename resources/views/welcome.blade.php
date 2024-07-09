@@ -50,14 +50,26 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="#hero" class="active">Dashboard<br></a></li>
+            <li><a href="#hero" class="active">Home<br></a></li>
             <li><a href="#faskes-sort-table">Faskes</a></li>
-            <li><a href"/login" class="active">Login<br></a></li>
+            <li class="dropdown"><span>{{ Auth::user()->name }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
+              <ul>
+                <li><a href="{{ route('profile.edit') }}">Profile</a></li>
+                <li>
+                  <form method="POST" action="{{ route('logout') }}">
+                      @csrf <!-- Tambahkan CSRF token -->
+                      <a href="#" onclick="event.preventDefault(); this.closest('form').submit();">
+                          {{ __('Log Out') }}
+                      </a>
+                  </form>
+              </li>
+              </ul>
+            </li>
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
 
-        <a class="cta-btn d-none d-sm-block" href="#appointment">Daftar Faskes</a>
+        <a class="cta-btn d-none d-sm-block" href="#daftar-faskes">Daftar Faskes</a>
 
       </div>
 
@@ -145,7 +157,7 @@
           <div class="table-responsive">
             <div class="card">
               <div class="card-body">
-                <table class="table table-hover table-bordered">
+                <table class="table table-hover">
                     <thead>
                         <tr>
                             <th>ID</th>
@@ -205,144 +217,85 @@
     
 
     <!-- Appointment Section -->
-    <section id="appointment" class="appointment section">
+    <section id="daftar-faskes" class="appointment section">
 
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
-        <h2>Appointment</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
+        <h2>Daftar Faskes</h2>
+        <p>Ayo daftarkan Fasilitas Kesehatan (FASKES) anda di bawah sini!</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-        <form action="forms/appointment.php" method="post" role="form" class="php-email-form">
-          <div class="row">
-            <div class="col-md-4 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required="">
+        <form action="{{ route('rolefaskes.store') }}" method="POST" class="php-email-form">
+            @csrf
+            <div class="row">
+                <div class="col-md-4 form-group">
+                    <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Faskes" required>
+                </div>
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                    <input type="text" name="nama_pengelola" class="form-control" id="nama_pengelola" placeholder="Nama Pengelola" required>
+                </div>
+                <div class="col-md-4 form-group mt-3 mt-md-0">
+                    <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Alamat" required>
+                </div>
             </div>
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" required="">
+            <div class="row">
+                <div class="col-md-4 form-group mt-3">
+                    <input type="text" name="website" class="form-control" id="website" placeholder="Website" required>
+                </div>
+                <div class="col-md-4 form-group mt-3">
+                    <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
+                </div>
+                <div class="col-md-4 form-group mt-3">
+                    <select name="kabkota_id" id="kabkota_id" class="form-select" required>
+                        <option value="">Select Kab/Kota</option>
+                        <option value="1">Kab/Kota 1</option>
+                        <option value="2">Kab/Kota 2</option>
+                        <option value="3">Kab/Kota 3</option>
+                        <option value="4">Kab/Kota 4</option>
+                    </select>
+                </div>
             </div>
-            <div class="col-md-4 form-group mt-3 mt-md-0">
-              <input type="tel" class="form-control" name="phone" id="phone" placeholder="Your Phone" required="">
+            <div class="row">
+                <div class="col-md-4 form-group mt-3">
+                    <input type="text" name="rating" class="form-control" id="rating" placeholder="Rating" required>
+                </div>
+                <div class="col-md-4 form-group mt-3">
+                    <input type="text" name="latitude" class="form-control" id="latitude" placeholder="Latitude" required>
+                </div>
+                <div class="col-md-4 form-group mt-3">
+                    <input type="text" name="longitude" class="form-control" id="longitude" placeholder="Longitude" required>
+                </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="col-md-4 form-group mt-3">
-              <input type="datetime-local" name="date" class="form-control datepicker" id="date" placeholder="Appointment Date" required="">
+            <div class="row">
+                <div class="col-md-4 form-group mt-3">
+                    <select name="jenis_faskes_id" id="jenis_faskes_id" class="form-select" required>
+                        <option value="">Select Jenis Faskes</option>
+                        <option value="1">Jenis Faskes 1</option>
+                        <option value="2">Jenis Faskes 2</option>
+                        <option value="3">Jenis Faskes 3</option>
+                    </select>
+                </div>
+                <div class="col-md-4 form-group mt-3">
+                    <select name="kategori_id" id="kategori_id" class="form-select" required>
+                        <option value="">Select Kategori</option>
+                        <option value="1">Kategori 1</option>
+                        <option value="2">Kategori 2</option>
+                        <option value="3">Kategori 3</option>
+                    </select>
+                </div>
+                <div class="col-md-4 form-group mt-3">
+                <button type="submit" class="btn btn-primary form-control">Submit</button>
+              </div>
             </div>
-            <div class="col-md-4 form-group mt-3">
-              <select name="department" id="department" class="form-select" required="">
-                <option value="">Select Department</option>
-                <option value="Department 1">Department 1</option>
-                <option value="Department 2">Department 2</option>
-                <option value="Department 3">Department 3</option>
-              </select>
-            </div>
-            <div class="col-md-4 form-group mt-3">
-              <select name="doctor" id="doctor" class="form-select" required="">
-                <option value="">Select Doctor</option>
-                <option value="Doctor 1">Doctor 1</option>
-                <option value="Doctor 2">Doctor 2</option>
-                <option value="Doctor 3">Doctor 3</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" placeholder="Message (Optional)"></textarea>
-          </div>
-          <div class="mt-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">Your appointment request has been sent successfully. Thank you!</div>
-            <div class="text-center"><button type="submit">Make an Appointment</button></div>
-          </div>
         </form>
-
-      </div>
+    </div>
+    
 
     </section><!-- /Appointment Section -->
   </main>
 
-  <footer id="footer" class="footer light-background">
-
-    <div class="container footer-top">
-      <div class="row gy-4">
-        <div class="col-lg-4 col-md-6 footer-about">
-          <a href="index.html" class="logo d-flex align-items-center">
-            <span class="sitename">Medilab</span>
-          </a>
-          <div class="footer-contact pt-3">
-            <p>A108 Adam Street</p>
-            <p>New York, NY 535022</p>
-            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-            <p><strong>Email:</strong> <span>info@example.com</span></p>
-          </div>
-          <div class="social-links d-flex mt-4">
-            <a href="https://www.instagram.com/albaniilham_/"><i class="bi bi-instagram"></i></a>
-          </div>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Useful Links</h4>
-          <ul>
-            <li><a href="#">Dashboard</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Terms of service</a></li>
-            <li><a href="#">Privacy policy</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Our Services</h4>
-          <ul>
-            <li><a href="#">Web Design</a></li>
-            <li><a href="#">Web Development</a></li>
-            <li><a href="#">Product Management</a></li>
-            <li><a href="#">Marketing</a></li>
-            <li><a href="#">Graphic Design</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Hic solutasetp</h4>
-          <ul>
-            <li><a href="#">Molestiae accusamus iure</a></li>
-            <li><a href="#">Excepturi dignissimos</a></li>
-            <li><a href="#">Suscipit distinctio</a></li>
-            <li><a href="#">Dilecta</a></li>
-            <li><a href="#">Sit quas consectetur</a></li>
-          </ul>
-        </div>
-
-        <div class="col-lg-2 col-md-3 footer-links">
-          <h4>Nobis illum</h4>
-          <ul>
-            <li><a href="#">Ipsam</a></li>
-            <li><a href="#">Laudantium dolorum</a></li>
-            <li><a href="#">Dinera</a></li>
-            <li><a href="#">Trodelas</a></li>
-            <li><a href="#">Flexo</a></li>
-          </ul>
-        </div>
-
-      </div>
-    </div>
-
-    <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Medilab</strong> <span>All Rights Reserved</span></p>
-      <div class="credits">
-        <!-- All the links in the footer should remain intact. -->
-        <!-- You can delete the links only if you've purchased the pro version. -->
-        <!-- Licensing information: https://bootstrapmade.com/license/ -->
-        <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-        Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-      </div>
-    </div>
-
-  </footer>
+  @include('layouts.footer')
 
   <!-- Scroll Top -->
   <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
