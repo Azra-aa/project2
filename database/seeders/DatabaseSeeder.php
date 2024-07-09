@@ -22,8 +22,8 @@ class DatabaseSeeder extends Seeder
         $this->call([
             JenisFaskesSeeder::class,
             KategoriSeeder::class,
-            KabkotaSeeder::class,
             ProvinsiSeeder::class,
+            KabkotaSeeder::class,
             FaskesSeeder::class,
         ]);
     }
