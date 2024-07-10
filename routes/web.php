@@ -20,8 +20,17 @@ use App\Http\Controllers\RolefaskesController;
 |
 */
 
-Route::get('/', [WelcomeController::class, 'index'])->middleware(['auth', 'verified'])->name('welcome');
 
+Route::middleware(['auth', 'verified'])->group(function () {
+    // Rute untuk halaman utama
+    Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+
+    // Rute untuk menampilkan form create
+    Route::get('/create', [WelcomeController::class, 'create'])->name('faskes.create');
+
+    // Rute untuk menyimpan faskes baru
+    Route::post('/store', [WelcomeController::class, 'store'])->name('faskes.store');
+});
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');

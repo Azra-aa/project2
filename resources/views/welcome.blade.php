@@ -26,6 +26,33 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .form-container {
+        max-width: 600px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .form-group label {
+        font-weight: bold;
+    }
+    .form-group input,
+    .form-group select {
+        border-radius: 20px;
+    }
+    .btn-primary {
+        border-radius: 20px;
+        width: 100%;
+        padding: 10px;
+    }
+</style>
 
   <!-- =======================================================
   * Template Name: Medilab
@@ -193,23 +220,21 @@
                         </tr>
                         @endforeach
                     </tbody>
+                    <form method="GET" action="{{ route('welcome') }}" class="d-flex">
+                        <div class="form-group">
+                            <label for="jenisFaskesSelect" class="mr-2">Filter by Jenis Faskes ID:</label>
+                            <select id="jenisFaskesSelect" name="jenis_faskes_id" class="form-control" onchange="this.form.submit()">
+                                <option value="">All</option>
+                                <option value="1" {{ request('jenis_faskes_id') == 1 ? 'selected' : '' }}>1</option>
+                                <option value="2" {{ request('jenis_faskes_id') == 2 ? 'selected' : '' }}>2</option>
+                                <option value="3" {{ request('jenis_faskes_id') == 3 ? 'selected' : '' }}>3</option>
+                            </select>
+                        </div>
+                    </form>
                 </table>
                 <br>
               </div>
             </div>
-              <div class="form-container d-flex justify-content-end w-100">
-                  <form method="GET" action="{{ route('welcome') }}" class="d-flex">
-                      <div class="form-group">
-                          <label for="jenisFaskesSelect" class="mr-2">Filter by Jenis Faskes ID:</label>
-                          <select id="jenisFaskesSelect" name="jenis_faskes_id" class="form-control" onchange="this.form.submit()">
-                              <option value="">All</option>
-                              <option value="1" {{ request('jenis_faskes_id') == 1 ? 'selected' : '' }}>1</option>
-                              <option value="2" {{ request('jenis_faskes_id') == 2 ? 'selected' : '' }}>2</option>
-                              <option value="3" {{ request('jenis_faskes_id') == 3 ? 'selected' : '' }}>3</option>
-                          </select>
-                      </div>
-                  </form>
-              </div>
           </div>
         </div>
       </div>
@@ -219,78 +244,69 @@
 
     <!-- Appointment Section -->
     <section id="daftar-faskes" class="appointment section">
-
-      <!-- Section Title -->
-      <div class="container section-title" data-aos="fade-up">
-        <h2>Daftar Faskes</h2>
-        <p>Ayo daftarkan Fasilitas Kesehatan (FASKES) anda di bawah sini!</p>
-      </div><!-- End Section Title -->
-
       <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <form action="{{ route('rolefaskes.store') }}" method="POST" class="php-email-form">
-            @csrf
-            <div class="row">
-                <div class="col-md-4 form-group">
-                    <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Faskes" required>
-                </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" name="nama_pengelola" class="form-control" id="nama_pengelola" placeholder="Nama Pengelola" required>
-                </div>
-                <div class="col-md-4 form-group mt-3 mt-md-0">
-                    <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Alamat" required>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 form-group mt-3">
-                    <input type="text" name="website" class="form-control" id="website" placeholder="Website" required>
-                </div>
-                <div class="col-md-4 form-group mt-3">
-                    <input type="email" name="email" class="form-control" id="email" placeholder="Email" required>
-                </div>
-                <div class="col-md-4 form-group mt-3">
-                    <select name="kabkota_id" id="kabkota_id" class="form-select" required>
-                        <option value="">Select Kab/Kota</option>
-                        <option value="1">Kab/Kota 1</option>
-                        <option value="2">Kab/Kota 2</option>
-                        <option value="3">Kab/Kota 3</option>
-                        <option value="4">Kab/Kota 4</option>
-                    </select>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 form-group mt-3">
-                    <input type="text" name="rating" class="form-control" id="rating" placeholder="Rating" required>
-                </div>
-                <div class="col-md-4 form-group mt-3">
-                    <input type="text" name="latitude" class="form-control" id="latitude" placeholder="Latitude" required>
-                </div>
-                <div class="col-md-4 form-group mt-3">
-                    <input type="text" name="longitude" class="form-control" id="longitude" placeholder="Longitude" required>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4 form-group mt-3">
-                    <select name="jenis_faskes_id" id="jenis_faskes_id" class="form-select" required>
-                        <option value="">Select Jenis Faskes</option>
-                        <option value="1">Jenis Faskes 1</option>
-                        <option value="2">Jenis Faskes 2</option>
-                        <option value="3">Jenis Faskes 3</option>
-                    </select>
-                </div>
-                <div class="col-md-4 form-group mt-3">
-                    <select name="kategori_id" id="kategori_id" class="form-select" required>
-                        <option value="">Select Kategori</option>
-                        <option value="1">Kategori 1</option>
-                        <option value="2">Kategori 2</option>
-                        <option value="3">Kategori 3</option>
-                    </select>
-                </div>
-                <div class="col-md-4 form-group mt-3">
-                <button type="submit" class="btn btn-primary form-control">Submit</button>
+        <div class="container form-container" data-aos="fade-up" data-aos-delay="100">
+          
+          <div class="container section-title" data-aos="fade-up">
+            <h2>Daftar Faskes</h2>
+            <p>Ayo daftarkan Fasilitas Kesehatan (FASKES) anda di bawah sini!</p>
+          </div>
+          <form action="{{ route('faskes.store') }}" method="POST">
+              @csrf
+              <div class="form-group">
+                  <label for="nama">Nama:</label>
+                  <input type="text" name="nama" class="form-control" id="nama" placeholder="Nama Faskes">
               </div>
-            </div>
-        </form>
-    </div>
+              <div class="form-group">
+                  <label for="nama_pengelola">Nama Pengelola:</label>
+                  <input type="text" name="nama_pengelola" class="form-control" id="nama_pengelola" placeholder="Nama Pengelola">
+              </div>
+              <div class="form-group">
+                  <label for="alamat">Alamat:</label>
+                  <input type="text" name="alamat" class="form-control" id="alamat" placeholder="Alamat">
+              </div>
+              <div class="form-group">
+                  <label for="website">Website:</label>
+                  <input type="text" name="website" class="form-control" id="website" placeholder="Website">
+              </div>
+              <div class="form-group">
+                  <label for="email">Email:</label>
+                  <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+              </div>
+              <div class="form-group">
+                  <label for="kabkota_id">Kab/Kota:</label>
+                  <select name="kabkota_id" id="kabkota_id" class="form-control">
+                      <option value="">Select Kab/Kota</option>
+                      <option value="1">Kab/Kota 1</option>
+                      <option value="2">Kab/Kota 2</option>
+                      <option value="3">Kab/Kota 3</option>
+                      <option value="4">Kab/Kota 4</option>
+                  </select>
+              </div>
+              <div class="form-group">
+                  <label for="rating">Rating:</label>
+                  <input type="number" name="rating" class="form-control" id="rating" placeholder="Rating">
+              </div>
+              <div class="form-group">
+                  <label for="latitude">Latitude:</label>
+                  <input type="text" name="latitude" class="form-control" id="latitude" placeholder="Latitude">
+              </div>
+              <div class="form-group">
+                  <label for="longitude">Longitude:</label>
+                  <input type="text" name="longitude" class="form-control" id="longitude" placeholder="Longitude">
+              </div>
+              <div class="form-group">
+                  <label for="jenis_faskes_id">Jenis Faskes ID:</label>
+                  <input type="number" name="jenis_faskes_id" class="form-control" id="jenis_faskes_id" placeholder="Jenis Faskes ID">
+              </div>
+              <div class="form-group">
+                  <label for="kategori_id">Kategori ID:</label>
+                  <input type="number" name="kategori_id" class="form-control" id="kategori_id" placeholder="Kategori ID">
+              </div>
+              <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+      </div>
+      </div>
     
 
     </section><!-- /Appointment Section -->
@@ -311,6 +327,13 @@
   <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+      AOS.init();
+  </script>
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
