@@ -27,5 +27,12 @@
               <a href="/admin" class="nav-link">Home</a>
             </li>
           </ul>
+          
+          <!-- Right navbar links -->
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a href="/" class="nav-link">Landing Page</a>
+            </li>
+          </ul>
         </nav>
         <!-- /.navbar -->

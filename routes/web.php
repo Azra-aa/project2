@@ -22,13 +22,13 @@ use App\Http\Controllers\RolefaskesController;
 
 Route::get('/', [WelcomeController::class, 'index'])->middleware(['auth', 'verified'])->name('welcome');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth', 'admin'])->group(function () {
     // admin
-    Route::get('/admin', [AdminController::class, 'index']);
+    Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 
     // admin/provinsi
     Route::resource('admin/provinsi', ProvinsiController::class);

@@ -55,6 +55,7 @@
             <li class="dropdown"><span>{{ Auth::user()->name }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
               <ul>
                 <li><a href="{{ route('profile.edit') }}">Profile</a></li>
+                <li><a href="{{ route('admin.index') }}">Admin Page</a></li>
                 <li>
                   <form method="POST" action="{{ route('logout') }}">
                       @csrf <!-- Tambahkan CSRF token -->
