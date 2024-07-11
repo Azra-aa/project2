@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <title>Faskes Dashboard</title>
+  <title>Landing Page</title>
   <meta content="" name="description">
   <meta content="" name="keywords">
 
@@ -26,6 +26,33 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css">
+  <style>
+    .form-container {
+        max-width: 600px;
+        margin: 50px auto;
+        background: #fff;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .form-group label {
+        font-weight: bold;
+    }
+    .form-group input,
+    .form-group select {
+        border-radius: 20px;
+    }
+    .btn-primary {
+        border-radius: 20px;
+        width: 100%;
+        padding: 10px;
+    }
+</style>
 
   <!-- =======================================================
   * Template Name: Medilab
@@ -35,29 +62,3 @@
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
 </head>
-
-<body class="index-page">
-  <header id="header" class="header sticky-top">    
-    <div class="branding d-flex align-items-center">
-      <div class="container position-relative d-flex align-items-center justify-content-between">
-        <a href="#" class="logo d-flex align-items-center me-auto">
-          <h1 class="sitename">FASKES</h1>
-        </a>
-
-        <nav id="navmenu" class="navmenu">
-          <ul>
-            <li><a href="#hero" class="active">Home<br></a></li>
-          </ul>
-          <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-        </nav>
-
-        <a class="btn d-none d-sm-block" href="faskes.profile">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
-            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
-            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8m8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1"/>
-          </svg>
-        </a>
-        <!-- Right navbar links -->
-      </div>
-    </div>
-  </header>

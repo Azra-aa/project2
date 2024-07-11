@@ -20,20 +20,18 @@ use App\Http\Controllers\RolefaskesController;
 |
 */
 
-
 Route::middleware(['auth', 'verified'])->group(function () {
     // Rute untuk halaman utama
     Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+    
+    Route::get('/dashboard')->name('dashboard');
 
     // Rute untuk menampilkan form create
     Route::get('/create', [WelcomeController::class, 'create'])->name('faskes.create');
 
     // Rute untuk menyimpan faskes baru
-    Route::post('/store', [WelcomeController::class, 'store'])->name('faskes.store');
+    Route::post('/', [WelcomeController::class, 'store'])->name('faskes.store');
 });
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware(['auth', 'admin'])->group(function () {
     // admin
@@ -71,19 +69,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
 });
 
 Route::middleware('auth')->group(function () {
-    
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
-
-    // FaskesRole
-    Route::get('/faskes', [RolefaskesController::class, 'index'])->name('rolefaskes.index');
-    Route::get('/faskes/create', [RolefaskesController::class, 'create'])->name('rolefaskes.create');
-    Route::post('/faskes', [RolefaskesController::class, 'store'])->name('rolefaskes.store');
-    Route::get('/faskes/{id}', [RolefaskesController::class, 'show'])->name('rolefaskes.show');
-    Route::get('/faskes/{id}/edit', [RolefaskesController::class, 'edit'])->name('rolefaskes.edit');
-    Route::put('/faskes/{id}', [RolefaskesController::class, 'update'])->name('rolefaskes.update');
-    Route::delete('/faskes/{id}', [RolefaskesController::class, 'destroy'])->name('rolefaskes.destroy');
 });
 
 require __DIR__.'/auth.php';

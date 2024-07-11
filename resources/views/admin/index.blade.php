@@ -1,7 +1,7 @@
 @include('admin.header')
 @include('admin.sidebar')
 
-<div class="container-fluid px-4">
+<div class="container-fluid">
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
         <!-- Content Header (Page header) -->

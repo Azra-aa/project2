@@ -24,7 +24,7 @@ class WelcomeController extends Controller
     public function create()
     {
         // Menampilkan form untuk membuat faskes baru
-        return view('create_faskes');
+        return view('/create');
     }
 
     public function store(Request $request)
