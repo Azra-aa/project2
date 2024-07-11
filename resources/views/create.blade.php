@@ -1,3 +1,4 @@
+@include('layouts.header')
 <body class="index-page">
 
     @include('layouts.navbar')
@@ -58,11 +59,21 @@
                 </div>
                 <div class="form-group">
                     <label for="jenis_faskes_id">Jenis Faskes ID:</label>
-                    <input type="number" name="jenis_faskes_id" class="form-control" id="jenis_faskes_id" placeholder="Jenis Faskes ID">
+                    <select name="jenis_faskes_id" id="jenis_faskes_id" class="form-control">
+                        <option value="">Select Faskes ID:</option>
+                        <option value="1">Kab/Kota 1</option>
+                        <option value="2">Kab/Kota 2</option>
+                        <option value="3">Kab/Kota 3</option>
+                    </select>
                 </div>
                 <div class="form-group">
                     <label for="kategori_id">Kategori ID:</label>
-                    <input type="number" name="kategori_id" class="form-control" id="kategori_id" placeholder="Kategori ID">
+                    <select name="kategori_id" id="kategori_id" class="form-control">
+                        <option value="">Select Kategori ID:</option>
+                        <option value="1">Kategori 1</option>
+                        <option value="2">Kategori 2</option>
+                        <option value="3">Kategori 3</option>
+                    </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>

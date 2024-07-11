@@ -14,9 +14,9 @@ class JenisFaskesSeeder extends Seeder
     public function run(): void
     {
         DB::table('jenis_faskes')->insert([
-            ['id' => 1, 'nama' => 'Rumah Sakit'],
-            ['id' => 2, 'nama' => 'Klinik'],
-            // Tambahkan data jenis faskes lainnya jika diperlukan
+            ['id' => 1, 'nama' => 'Puskesmas'],
+            ['id' => 2, 'nama' => 'Spesialis'],
+            ['id' => 3, 'nama' => 'Rumah Sakit'],
         ]);
     }
 }

@@ -14,8 +14,9 @@ class ProvinsiSeeder extends Seeder
     public function run(): void
     {
         DB::table('provinsis')->insert([
-            ['id' => 1, 'nama' => 'Provinsi A', 'ibukota' => 'Ibukota A', 'latitude' => -6.200000, 'longitude' => 106.816666],
-            ['id' => 2, 'nama' => 'Provinsi B', 'ibukota' => 'Ibukota B', 'latitude' => -7.250445, 'longitude' => 112.768845],
+            ['id' => 1, 'nama' => 'DKI Jakarta', 'ibukota' => 'Jakarta Pusat', 'latitude' => -7.250445, 'longitude' => 112.768845],
+            ['id' => 2, 'nama' => 'Jawa Barat', 'ibukota' => 'Bandung', 'latitude' => -6.200000, 'longitude' => 106.816666],
+            ['id' => 3, 'nama' => 'Jawa Tengah', 'ibukota' => 'Semarang', 'latitude' => -2.600000, 'longitude' => 108.616666],
             // Tambahkan data provinsi lainnya jika diperlukan
         ]);
     }

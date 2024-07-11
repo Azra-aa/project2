@@ -16,7 +16,7 @@ class KategoriSeeder extends Seeder
         DB::table('kategoris')->insert([
             ['id' => 1, 'nama' => 'Kategori A'],
             ['id' => 2, 'nama' => 'Kategori B'],
-            // Tambahkan data kategori lainnya jika diperlukan
+            ['id' => 3, 'nama' => 'Kategori C'],
         ]);
     }
 }
