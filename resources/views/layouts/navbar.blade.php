@@ -12,7 +12,7 @@
 
         <nav id="navmenu" class="navmenu">
           <ul>
-            <li><a href="/#hero" class="active">Home<br></a></li>
+            <li><a href="/#hero">Home<br></a></li>
             <li><a href="/#faskes-sort-table">Faskes</a></li>
             <li class="dropdown"><span>{{ Auth::user()->name }}</span> <i class="bi bi-chevron-down toggle-dropdown"></i>
               <ul>
