@@ -14,9 +14,10 @@ class KabkotaSeeder extends Seeder
     public function run(): void
     {
         DB::table('kabkotas')->insert([
-            ['id' => 1, 'nama' => 'Jakarta Selatan', 'latitude' => -6.200000, 'longitude' => 106.816666, 'provinsi_id' => 1],
-            ['id' => 2, 'nama' => 'Depok', 'latitude' => -7.250445, 'longitude' => 112.768845, 'provinsi_id' => 2],
-            ['id' => 3, 'nama' => 'Salatiga', 'latitude' => -2.750445, 'longitude' => 117.268845, 'provinsi_id' => 3],
+            ['id' => 1, 'nama' => 'Jakarta Selatan', 'latitude' => -6.232970, 'longitude' => 106.834572, 'provinsi_id' => 1],
+            ['id' => 2, 'nama' => 'Depok', 'latitude' => -6.402484, 'longitude' => 106.794243, 'provinsi_id' => 2],
+            ['id' => 3, 'nama' => 'Salatiga', 'latitude' => -7.330523, 'longitude' => 110.508438, 'provinsi_id' => 3],
+            ['id' => 4, 'nama' => 'Pasuruan', 'latitude' => -7.644872, 'longitude' => 112.903297, 'provinsi_id' => 4],
         ]);
     }
 }

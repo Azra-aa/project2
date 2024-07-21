@@ -62,9 +62,9 @@
                     <label for="jenis_faskes_id">Jenis Faskes ID:</label>
                     <select name="jenis_faskes_id" id="jenis_faskes_id" class="form-control">
                         <option value="">Select Faskes ID:</option>
-                        <option value="1">Kab/Kota 1</option>
-                        <option value="2">Kab/Kota 2</option>
-                        <option value="3">Kab/Kota 3</option>
+                        <option value="1">Faskes ID 1</option>
+                        <option value="2">Faskes ID 2</option>
+                        <option value="3">Faskes ID 3</option>
                     </select>
                 </div>
                 <div class="form-group">

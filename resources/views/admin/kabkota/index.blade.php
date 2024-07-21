@@ -25,7 +25,7 @@
                         <div class="card">                            
                             <div class="card-body">
                                 <h2 class="text-center">Data Kab/Kota</h2>
-                                <a href="/kabkota/create"><button class="btn btn-primary mb-1">Tambah Data</button></a>
+                                <a href="{{ route('admin.kabkota.create') }}"><button class="btn btn-primary mb-1">Tambah Data</button></a>
                                 @if (session('success'))
                                     <div class="alert alert-success">
                                         {{ session('success') }}
