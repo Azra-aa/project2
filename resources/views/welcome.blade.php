@@ -20,14 +20,15 @@
         <div class="content row gy-4">
           <div class="col-lg-4 d-flex align-items-stretch">
             <div class="why-box" data-aos="zoom-out" data-aos-delay="200">
-              <h3>Tujuan dari Banilab</h3>
+              <h3>Tujuan</h3>
               <p class="text-justify">
-                Banilab adalah project yang dikerjakan untuk memenuhi tugas dari Matakuliah Pemrograman Web 2 yang diajar oleh Yth. Dr. Sirojul Munir S.Si., M.Kom
+                Memberikan informasi yang tepat dan terkini mengenai berbagai fasilitas kesehatan seperti rumah sakit, klinik, puskesmas, dan apotek kepada masyarakat. 
+                Dan membantu pemerintah dan organisasi kesehatan dalam memetakan distribusi fasilitas kesehatan dan mengidentifikasi daerah yang kekurangan layanan kesehatan.
               </p>
               <div class="text-center">
-                <a href="https://www.instagram.com/rojulman/" class="more-btn"><i class="bi bi-instagram"></i><span> rojulman</span></i></a>
+                  <a href="https://www.instagram.com/ajra.ahmad/" class="more-btn"><i class="bi bi-instagram"></i><span> ajra.ahmad</span></i></a>
+                </div>
               </div>
-            </div>
           </div><!-- End Why Box -->
 
           <div class="col-lg-8 d-flex align-items-stretch">

@@ -16,7 +16,7 @@
                     alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">Albani Gantengs</a>
+                <a href="#" class="d-block">BaniLAB</a>
             </div>
         </div>
         

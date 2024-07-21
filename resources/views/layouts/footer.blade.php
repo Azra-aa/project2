@@ -11,11 +11,11 @@
             <p>Depok, Jawa Barat</p>
             <p class="mt-3">
               <i class="bi bi-whatsapp"></i> 
-              <span>+62 855-9126-8582</span>
+              <span>+62 851-6148-1518</span>
             </p>
             <p>
               <i class="bi bi-envelope"></i> 
-              <span>bani@gmail.com</span>
+              <span>azra.ahmad.algifari@gmail.com</span>
             </p>
           </div>
         </div>

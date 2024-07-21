@@ -9,7 +9,7 @@
             <div class="container-fluid">
                 <div class="row mb-2">
                     <div class="col-sm-6">
-                        <h1>Direktori Fasilitas Kesehatan</h1>
+                        <h1>Admin Dashboard</h1>
                     </div>
                 </div>
             </div><!-- /.container-fluid -->
@@ -21,12 +21,9 @@
             <!-- Default box -->
             <div class="card">
                 <div class="card-header">
-                    <h3 class="card-title">Project UAS</h3>
+                    <h3 class="card-title">Direktori Fasilitas Kesehatan</h3>
                 </div>
                 <div class="card-body">
-                    Albani Ilham - 0110123207
-                </div>
-                <div class="card-footer">
                     <a href="{{ route('admin.provinsi.index') }}"><button class='btn btn-success'>Daftar Provinsi</button></a>
                     <a href="{{ route('admin.kabkota.index') }}"><button class='btn btn-success'>Daftar Kabkota</button></a>
                     <a href="{{ route('admin.faskes.index') }}"><button class='btn btn-success'>Daftar Faskes</button></a>
