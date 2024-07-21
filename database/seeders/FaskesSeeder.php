@@ -23,8 +23,8 @@ class FaskesSeeder extends Seeder
                 'email' => 'azrahealth@gmail.com',
                 'kabkota_id' => 2, // Pastikan id ini ada di tabel kabkotas
                 'rating' => 68,
-                'latitude' => -6.200000,
-                'longitude' => 106.816666,
+                'latitude' => -6.355303,
+                'longitude' => 106.842564,
                 'jenis_faskes_id' => 2, // Pastikan id ini ada di tabel jenis_faskes
                 'kategori_id' => 1, // Pastikan id ini ada di tabel kategoris
             ], 
@@ -37,23 +37,9 @@ class FaskesSeeder extends Seeder
                 'email' => 'banihealth@gmail.com',
                 'kabkota_id' => 2, // Pastikan id ini ada di tabel kabkotas
                 'rating' => 60,
-                'latitude' => 1.11,
-                'longitude' => 1.11,
+                'latitude' => -6.355303,
+                'longitude' => 106.842564,
                 'jenis_faskes_id' => 1, // Pastikan id ini ada di tabel jenis_faskes
-                'kategori_id' => 2, // Pastikan id ini ada di tabel kategoris
-            ],
-            [
-                'id' => 3,
-                'nama' => 'Lupi MED',
-                'nama_pengelola' => 'Lupi',
-                'alamat' => '',
-                'website' => 'lupi.com',
-                'email' => 'lupimed@gmail.com',
-                'kabkota_id' => 1, // Pastikan id ini ada di tabel kabkotas
-                'rating' => 99,
-                'latitude' => -6.200000, 
-                'longitude' => 106.816666,
-                'jenis_faskes_id' => 3, // Pastikan id ini ada di tabel jenis_faskes
                 'kategori_id' => 2, // Pastikan id ini ada di tabel kategoris
             ],
         ]);

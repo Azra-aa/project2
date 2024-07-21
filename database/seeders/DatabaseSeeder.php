@@ -20,11 +20,11 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         $this->call([
-            // JenisFaskesSeeder::class,
-            // KategoriSeeder::class,
-            // ProvinsiSeeder::class,
-            // KabkotaSeeder::class,
-            // FaskesSeeder::class,
+            JenisFaskesSeeder::class,
+            KategoriSeeder::class,
+            ProvinsiSeeder::class,
+            KabkotaSeeder::class,
+            FaskesSeeder::class,
             UserSeeder::class,
         ]);
     }
