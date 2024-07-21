@@ -1,3 +1,4 @@
+<title>Home - Azralab</title>
 <body class="index-page">
 
   @include('layouts.navbar')

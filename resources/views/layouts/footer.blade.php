@@ -4,7 +4,7 @@
       <div class="row gy-4">
         <div class="col-lg-4 col-md-6 footer-about">
           <a href="#" class="logo d-flex align-items-center">
-            <span class="sitename">Banilab</span>
+            <span class="sitename">Azralab</span>
           </a>
           <div class="footer-contact pt-3">
             <p>JL. Akses UI Kelapa Dua</p>
@@ -23,7 +23,7 @@
     </div>
 
     <div class="container copyright text-center mt-4">
-      <p>© <span>Copyright</span> <strong class="px-1 sitename">Banilab</strong> <span>All Rights Reserved</span></p>
+      <p>© <span>Copyright</span> <strong class="px-1 sitename">Azralab</strong> <span>All Rights Reserved</span></p>
       <div class="credits">
         Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
       </div>

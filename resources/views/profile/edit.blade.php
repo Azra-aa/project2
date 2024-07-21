@@ -1,3 +1,4 @@
+<title>Profile - Azralab</title>
 <x-app-layout>
 
     <div class="py-12">

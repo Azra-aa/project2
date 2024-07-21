@@ -1,5 +1,5 @@
 <footer class="main-footer">
-    <strong>Banilab <a href="https://azraahmad.com">Azra Ahmad</a>.</strong>
+    <strong>Azralab <a href="https://azraahmad.com">Azra Ahmad</a>.</strong>
 </br>
     <div class="float-right d-none d-sm-block">
         <b>Version</b> 3.1.0

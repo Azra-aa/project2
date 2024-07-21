@@ -16,7 +16,7 @@
                     alt="User Image">
             </div>
             <div class="info">
-                <a href="#" class="d-block">BaniLAB</a>
+                <a href="#" class="d-block">Azralab</a>
             </div>
         </div>
         

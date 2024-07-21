@@ -1,3 +1,4 @@
+<title>Daftar - Azralab</title>
 @include('layouts.header')
 <body class="index-page">
 
