@@ -1,3 +1,4 @@
+<link href="assets/img/puskes-logo.png" rel="icon">
 <title>Home - Azralab</title>
 <body class="index-page">
 
