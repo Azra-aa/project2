@@ -20,10 +20,10 @@ use App\Http\Controllers\RolefaskesController;
 |
 */
 
+// Rute untuk halaman utama
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
+
 Route::middleware(['auth', 'verified'])->group(function () {
-    // Rute untuk halaman utama
-    Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
-    
     Route::get('/dashboard')->name('dashboard');
 
     // Rute untuk menampilkan form create
