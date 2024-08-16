@@ -34,7 +34,7 @@
             @guest
             <!-- Tampilkan Register dan Daftar Faskes jika pengguna belum login -->
             <li><a href="{{ route('register') }}">Register</a></li>
-            <li><a href="{{ route('login') }}">Daftar Faskes</a></li>
+            <li><a class="cta-btn d-none d-sm-block" href="{{ route('login') }}"" >Daftar Faskes</a></li>
             @endguest
           </ul>
           <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>

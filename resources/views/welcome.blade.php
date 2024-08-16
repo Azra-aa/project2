@@ -5,7 +5,17 @@
   @include('layouts.navbar')
 
   <main class="main">
-
+    @if(session('error'))
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        Swal.fire({
+            icon: 'error',
+            title: 'Akses Ditolak',
+            text: '{{ session('error') }}',
+            confirmButtonText: 'OK'
+        });
+    </script>
+    @endif
     <!-- Hero Section -->
     <section id="hero" class="hero section light-background">
 

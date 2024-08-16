@@ -17,7 +17,7 @@ class Admin
     {
         $user = $request->user();
         if ($user->email != 'admin@gmail.com') {
-            return redirect('/');
+            return redirect('/')->with('error', 'Anda tidak memiliki akses admin!');
         }
         return $next($request);
     }
