@@ -19,6 +19,8 @@ class Admin
         if ($user->email != 'admin@gmail.com') {
             return redirect('/')->with('error', 'Anda tidak memiliki akses admin!');
         }
+
+        session()->flash('success', 'Selamat datang di halaman Admin!');    
         return $next($request);
     }
 }

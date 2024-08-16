@@ -38,7 +38,7 @@
                 Dan membantu pemerintah dan organisasi kesehatan dalam memetakan distribusi fasilitas kesehatan dan mengidentifikasi daerah yang kekurangan layanan kesehatan.
               </p>
               <div class="text-center">
-                  <a href="https://www.instagram.com/ajra.ahmad/" class="more-btn"><i class="bi bi-instagram"></i><span> ajra.ahmad</span></i></a>
+                  <a href="https://www.instagram.com/ajra.ahmad/" target="_blank" class="more-btn"><i class="bi bi-instagram"></i><span> ajra.ahmad</span></i></a>
                 </div>
               </div>
           </div><!-- End Why Box -->
