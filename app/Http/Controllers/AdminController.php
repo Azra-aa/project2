@@ -8,7 +8,7 @@ class AdminController extends Controller
 {
     public function index()
     {
-        session()->flash('success', 'Selamat datang di halaman Admin!');
+        session()->flash('admin_alert', 'Selamat datang di halaman admin!');
 
         return view('admin.index');
     }

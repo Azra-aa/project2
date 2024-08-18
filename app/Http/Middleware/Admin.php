@@ -17,10 +17,11 @@ class Admin
     {
         $user = $request->user();
         if ($user->email != 'admin@gmail.com') {
-            return redirect('/')->with('error', 'Anda tidak memiliki akses admin!');
+            session()->flash('alert_message', 'Anda bukan admin!');
+            return redirect('/');
         }
 
-        session()->flash('success', 'Selamat datang di halaman Admin!');    
+        session()->flash('admin_alert', 'Selamat datang di halaman admin!');
         return $next($request);
     }
 }

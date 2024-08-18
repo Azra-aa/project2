@@ -8,7 +8,7 @@
             Swal.fire({
                 icon: 'success',
                 title: 'Success',
-                text: '{{ session('success') }}',
+                text: '{{ session('admin_alert') }}',
                 showConfirmButton: false,
                 timer: 2000
             });
