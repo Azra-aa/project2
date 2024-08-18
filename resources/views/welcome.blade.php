@@ -5,13 +5,13 @@
   @include('layouts.navbar')
 
   <main class="main">
-    @if(session('error'))
+    @if(session('alert_message'))
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script>
         Swal.fire({
             icon: 'error',
             title: 'Akses Ditolak',
-            text: '{{ session('error') }}',
+            text: '{{ session('alert_message') }}',
             confirmButtonText: 'OK'
         });
     </script>

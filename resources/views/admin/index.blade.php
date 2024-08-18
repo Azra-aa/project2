@@ -2,7 +2,7 @@
 @include('admin.sidebar')
 
 <div class="container-fluid">
-    @if(session('success'))
+    @if(session('admin_alert'))
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
         <script>
             Swal.fire({
