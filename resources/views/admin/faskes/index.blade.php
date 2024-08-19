@@ -41,12 +41,11 @@
                                                 <th>Alamat</th>
                                                 <th>Website</th>
                                                 <th>Email</th>
-                                                <th>Kabkota ID</th>
+                                                <th>Kabkota</th>
                                                 <th>Rating</th>
                                                 <th>Latitude</th>
                                                 <th>Longitude</th>
-                                                <th>Jeneis Faskes ID</th>
-                                                <th>Kategori ID</th>
+                                                <th>Jeneis Faskes</th>
                                             </tr>
                                         </thead>
                                         <tbody>
@@ -63,7 +62,6 @@
                                                 <td>{{ $faskes->latitude }}</td>
                                                 <td>{{ $faskes->longitude }}</td>
                                                 <td>{{ $faskes->jenis_faskes_id }}</td>
-                                                <td>{{ $faskes->kategori_id }}</td>
                                                 <td>
                                                     {{-- <a href="{{ route('faskes.show', $faskes->id) }}" class="btn btn-info">Lihat Detail</a> --}}
                                                     <a href="{{ route('admin.faskes.edit', $faskes->id) }}"><button class='btn btn-warning'>Edit</button></a>

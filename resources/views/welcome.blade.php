@@ -37,9 +37,9 @@
                 Memberikan informasi yang tepat dan terkini mengenai berbagai fasilitas kesehatan seperti rumah sakit, klinik, puskesmas, dan apotek kepada masyarakat. 
                 Dan membantu pemerintah dan organisasi kesehatan dalam memetakan distribusi fasilitas kesehatan dan mengidentifikasi daerah yang kekurangan layanan kesehatan.
               </p>
-              <div class="text-center">
+                {{-- <div class="text-center">
                   <a href="https://www.instagram.com/ajra.ahmad/" target="_blank" class="more-btn"><i class="bi bi-instagram"></i><span> ajra.ahmad</span></i></a>
-                </div>
+                </div> --}}
               </div>
           </div><!-- End Why Box -->
 
@@ -104,12 +104,11 @@
                                   <th>Alamat</th>
                                   <th>Website</th>
                                   <th>Email</th>
-                                  <th>Kabkota ID</th>
+                                  <th>Kabkota</th>
                                   <th>Rating</th>
                                   <th>Latitude</th>
                                   <th>Longitude</th>
-                                  <th>Jenis Faskes ID</th>
-                                  <th>Kategori ID</th>
+                                  <th>Jenis Faskes</th>
                               </tr>
                           </thead>
                           <tbody id="faskesTableBody">
@@ -121,25 +120,23 @@
                                   <td>{{ $faskes->alamat }}</td>
                                   <td><a href="https://{{ $faskes->website }}" target="_blank">{{ $faskes->website }}</a></td>
                                   <td>{{ $faskes->email }}</td>
-                                  <td>{{ $faskes->kabkota_id }}</td>
+                                  <td>{{ $faskes->kabkota->nama }}</td>
                                   <td>{{ $faskes->rating }}</td>
                                   <td>{{ $faskes->latitude }}</td>
                                   <td>{{ $faskes->longitude }}</td>
-                                  <td>{{ $faskes->jenis_faskes_id }}</td>
-                                  <td>{{ $faskes->kategori_id }}</td>
+                                  <td>{{ $faskes->jenisFaskes->nama }}</td>
                               </tr>
                               @endforeach
                           </tbody>
                       </table>
                       <form method="GET" action="{{ route('welcome') }}#faskes-sort-table" class="d-flex">
                           <div class="form-group">
-                              <label for="jenisFaskesSelect" class="mr-2">Filter by Jenis Faskes ID:</label>
+                              <label for="jenisFaskesSelect" class="mr-2">Filter by Jenis Faskes:</label>
                               <select id="jenisFaskesSelect" name="jenis_faskes_id" class="form-control" onchange="this.form.submit()">
                                   <option value="">All</option>
-                                  <option value="1" {{ request('jenis_faskes_id') == 1 ? 'selected' : '' }}>1</option>
-                                  <option value="2" {{ request('jenis_faskes_id') == 2 ? 'selected' : '' }}>2</option>
-                                  <option value="3" {{ request('jenis_faskes_id') == 3 ? 'selected' : '' }}>3</option>
-                                  <option value="4" {{ request('jenis_faskes_id') == 4 ? 'selected' : '' }}>4</option>
+                                  <option value="1" {{ request('jenis_faskes_id') == 1 ? 'selected' : '' }}>Puskesmas</option>
+                                  <option value="2" {{ request('jenis_faskes_id') == 2 ? 'selected' : '' }}>Spesialis</option>
+                                  <option value="3" {{ request('jenis_faskes_id') == 3 ? 'selected' : '' }}>Rumah Sakit</option>
                               </select>
                           </div>
                       </form>
