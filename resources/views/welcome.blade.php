@@ -92,8 +92,20 @@
           <i class="fa-regular fa-hospital"></i>
           <h2 class="text-center">Daftar Fasilitas Kesehatan</h2>
           <br>
+          <form method="GET" action="{{ route('welcome') }}#faskes-sort-table" class="d-flex">
+              
           <div class="table-responsive">
               <div class="card">
+                <div class="form-group" style="width:300px; margin-top: 12px; margin-left: 18px" >
+                  <label for="jenisFaskesSelect" class="mr-2">Filter by Jenis Faskes:</label>
+                  <select id="jenisFaskesSelect" name="jenis_faskes_id" class="form-control" onchange="this.form.submit()">
+                      <option value="">All</option>
+                      <option value="1" {{ request('jenis_faskes_id') == 1 ? 'selected' : '' }}>Puskesmas</option>
+                      <option value="2" {{ request('jenis_faskes_id') == 2 ? 'selected' : '' }}>Spesialis</option>
+                      <option value="3" {{ request('jenis_faskes_id') == 3 ? 'selected' : '' }}>Rumah Sakit</option>
+                  </select>
+              </div>
+          </form>
                   <div class="card-body">
                       <table class="table table-hover">
                           <thead>
@@ -129,17 +141,7 @@
                               @endforeach
                           </tbody>
                       </table>
-                      <form method="GET" action="{{ route('welcome') }}#faskes-sort-table" class="d-flex">
-                          <div class="form-group">
-                              <label for="jenisFaskesSelect" class="mr-2">Filter by Jenis Faskes:</label>
-                              <select id="jenisFaskesSelect" name="jenis_faskes_id" class="form-control" onchange="this.form.submit()">
-                                  <option value="">All</option>
-                                  <option value="1" {{ request('jenis_faskes_id') == 1 ? 'selected' : '' }}>Puskesmas</option>
-                                  <option value="2" {{ request('jenis_faskes_id') == 2 ? 'selected' : '' }}>Spesialis</option>
-                                  <option value="3" {{ request('jenis_faskes_id') == 3 ? 'selected' : '' }}>Rumah Sakit</option>
-                              </select>
-                          </div>
-                      </form>
+                      
                       <br>
                     </div>
                 </div>

@@ -78,15 +78,6 @@
                         <option value="3">Faskes ID 3</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="kategori_id">Kategori ID:</label>
-                    <select name="kategori_id" id="kategori_id" class="form-control">
-                        <option value="">Select Kategori ID:</option>
-                        <option value="1">Kategori 1</option>
-                        <option value="2">Kategori 2</option>
-                        <option value="3">Kategori 3</option>
-                    </select>
-                </div>
                 <button type="submit" class="btn btn-primary">Submit</button>
             </form>
         </div>
